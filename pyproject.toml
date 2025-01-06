@@ -1,0 +1,18 @@
+[project]
+name = "im-corpus-builder"
+version = "0.1.0"
+description = "Japanese input method corpus build script"
+readme = "README.md"
+
+dependencies = ["jaconv", "regex", "sudachipy", "sudachidict_full"]
+
+[tool.ruff]
+line-length = 160
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
