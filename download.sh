@@ -3,6 +3,7 @@
 output_dir="dataset"     # ダウンロード先のディレクトリ
 
 mkdir -p "$output_dir"
+mkdir -p "$output_dir/japanese-web-ngram"
 
 curl https://lab.ndl.go.jp/dataset/huriganacorpus/shosi_dataset.zip -o "${output_dir}/shosi_dataset.zip"
 curl https://lab.ndl.go.jp/dataset/huriganacorpus/aozora_dataset.zip -o "${output_dir}/aozora_dataset.zip"
@@ -19,4 +20,4 @@ done < /tmp/filelist
 unzip dataset/aozora_dataset.zip -d dataset
 unzip dataset/shosi_dataset.zip -d dataset
 
-find . -name "${output_dir}/*.xz" -print0|xargs xz -0 -d 
+find "${output_dir}/japanese-web-ngram" -name "*.xz" -print0|xargs -0 xz -d
